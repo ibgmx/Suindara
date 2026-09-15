@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bcm2htr38nvyx"]
+
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="1_jxx3u"]
+[ext_resource type="Script" uid="uid://bu53d23wctoxd" path="res://CODIGOS/configuracoes.gd" id="1_wv1ly"]
+[ext_resource type="Texture2D" uid="uid://cl0ujo8lgf6my" path="res://ARTES/sair.png" id="2_gh2t8"]
+
+[node name="Configuracoes" type="Control" unique_id=1461277138]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wv1ly")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=241187870]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.13491163, 0.008295311, 0.20096722, 1)
+
+[node name="TeclaS" type="Label" parent="." unique_id=1159725279]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 169.0
+offset_right = 236.0
+offset_bottom = 184.0
+text = "S"
+
+[node name="TeclaA" type="Label" parent="." unique_id=1374188539]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 122.0
+offset_right = 203.0
+offset_bottom = 137.0
+text = "A"
+
+[node name="titulo" type="Label" parent="." unique_id=891462873]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 12.0
+offset_right = 383.0
+offset_bottom = 35.0
+text = "CONFIGURAÇOES"
+
+[node name="BotaoA" type="Button" parent="." unique_id=495407545]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 114.0
+offset_right = 150.0
+offset_bottom = 145.0
+text = "AGARRAR - A"
+
+[node name="BotaoS" type="Button" parent="." unique_id=1418696054]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 161.0
+offset_right = 213.0
+offset_bottom = 192.0
+text = "PARAR NO AR -S "
+
+[node name="Voltar" type="Button" parent="." unique_id=834965649]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 30.0
+offset_bottom = 37.0
+icon = ExtResource("2_gh2t8")
+flat = true
+script = ExtResource("1_jxx3u")
+
+[node name="Esc" type="Label" parent="." unique_id=762762775]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 210.0
+offset_right = 190.0
+offset_bottom = 225.0
+text = "PAUSAR - ESC"
+
+[node name="Efeitos" type="HSlider" parent="." unique_id=352273636]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 137.0
+offset_right = 475.0
+offset_bottom = 238.0
+
+[node name="Musicas" type="HSlider" parent="." unique_id=1387890273]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 187.0
+offset_right = 474.0
+offset_bottom = 251.0

@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dvg8mgfs3kpkt"]
+
+[ext_resource type="Texture2D" uid="uid://llmt442hii5l" path="res://ARTES/fundo.png" id="1_3gir8"]
+[ext_resource type="Script" uid="uid://cc1hwm0j6f1ft" path="res://CODIGOS/inicio.gd" id="1_ar3gb"]
+[ext_resource type="Texture2D" uid="uid://bvc5q1pvjomsf" path="res://ARTES/botao.png" id="3_xlw22"]
+[ext_resource type="Texture2D" uid="uid://cpku8dvmvdmyo" path="res://ARTES/seta.png" id="4_3gir8"]
+
+[node name="Inicio" type="Control" unique_id=2115038686]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ar3gb")
+
+[node name="fundo" type="TextureRect" parent="." unique_id=677566519]
+layout_mode = 1
+offset_right = 641.0
+offset_bottom = 361.0
+texture = ExtResource("1_3gir8")
+expand_mode = 1
+
+[node name="IniciarJogar" type="Button" parent="." unique_id=54869621 groups=["botoes"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 263.0
+offset_top = 161.0
+offset_right = 367.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "INICIAR
+"
+icon = ExtResource("3_xlw22")
+flat = true
+icon_alignment = 1
+
+[node name="Arquivos" type="Button" parent="." unique_id=553582207 groups=["botoes"]]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 197.0
+offset_right = 367.0
+offset_bottom = 237.0
+text = "ARQUIVOS"
+icon = ExtResource("3_xlw22")
+flat = true
+icon_alignment = 1
+
+[node name="Configurações" type="Button" parent="." unique_id=718683984 groups=["botoes"]]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 232.5
+offset_right = 367.0
+offset_bottom = 272.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONFIGS"
+icon = ExtResource("3_xlw22")
+flat = true
+icon_alignment = 1
+
+[node name="Créditos" type="Button" parent="." unique_id=1512197611 groups=["botoes"]]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 269.0
+offset_right = 367.0
+offset_bottom = 309.0
+text = "CRÉDITOS"
+icon = ExtResource("3_xlw22")
+flat = true
+icon_alignment = 1
+
+[node name="Título" type="Label" parent="." unique_id=1710394487]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 36.0
+offset_right = 262.0
+offset_bottom = 58.0
+scale = Vector2(4, 4)
+text = "INDARA"
+
+[node name="SetaDireita" type="TextureRect" parent="." unique_id=1905027284]
+texture_filter = 1
+layout_mode = 0
+texture = ExtResource("4_3gir8")
+
+[connection signal="pressed" from="IniciarJogar" to="." method="_on_iniciar_jogar_pressed"]
+[connection signal="pressed" from="Arquivos" to="." method="_on_arquivos_pressed"]
+[connection signal="pressed" from="Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="Créditos" to="." method="_on_créditos_pressed"]

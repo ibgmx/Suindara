@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dmshto4kygmto"]
+
+[ext_resource type="AudioStream" uid="uid://cxi2bp8r6csjt" path="res://SONS/music.mp3" id="1_rocrl"]
+[ext_resource type="Script" uid="uid://blehhhe85cgwb" path="res://CODIGOS/musicas.gd" id="2_njoed"]
+
+[node name="SomFase" type="AudioStreamPlayer" unique_id=334353754]
+stream = ExtResource("1_rocrl")
+volume_db = -8.0
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+script = ExtResource("2_njoed")

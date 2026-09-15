@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bcss671sp5a4y"]
+
+[ext_resource type="Script" uid="uid://hhwq08360k1o" path="res://CODIGOS/fases.gd" id="1_dfyso"]
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="2_dfyso"]
+[ext_resource type="Script" uid="uid://coa7i7fe2obib" path="res://CENAS/button.gd" id="3_6h8my"]
+
+[node name="Fases" type="Control" unique_id=1798600450]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dfyso")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=714206963]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.13491163, 0.008295311, 0.20096722, 1)
+
+[node name="BotaoFase1" type="Button" parent="." unique_id=73620612]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 56.0
+offset_right = 141.0
+offset_bottom = 87.0
+text = "FASE 1"
+
+[node name="BotaoFase2" type="Button" parent="." unique_id=1052881658]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 59.0
+offset_right = 346.0
+offset_bottom = 90.0
+text = "EM BREVE"
+
+[node name="BotaoFase3" type="Button" parent="." unique_id=1071537431]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 59.0
+offset_right = 526.0
+offset_bottom = 90.0
+text = "EM BREVE"
+
+[node name="BotaoFase4" type="Button" parent="." unique_id=17581202]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 203.0
+offset_right = 171.0
+offset_bottom = 234.0
+text = "EM BREVE"
+
+[node name="BotaoFase5" type="Button" parent="." unique_id=128069362]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 202.0
+offset_right = 351.0
+offset_bottom = 233.0
+text = "EM BREVE"
+
+[node name="BotaoFase6" type="Button" parent="." unique_id=201492094]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 200.0
+offset_right = 541.0
+offset_bottom = 231.0
+text = "EM BREVE"
+
+[node name="Voltar" type="Button" parent="." unique_id=1189337189]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 2.0
+offset_right = 29.0
+offset_bottom = 33.0
+text = "x"
+alignment = 0
+script = ExtResource("2_dfyso")
+
+[node name="ColorRectFadeEntrada" type="ColorRect" parent="." unique_id=1350007805]
+visible = false
+layout_mode = 0
+offset_top = 1.0
+offset_right = 640.0
+offset_bottom = 361.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1697432898]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 114.0
+offset_right = 320.0
+offset_bottom = 153.0
+text = "COMEÇA LOGO"
+script = ExtResource("3_6h8my")
+
+[connection signal="pressed" from="BotaoFase1" to="." method="_on_botao_fase_1_pressed"]
+[connection signal="pressed" from="BotaoFase2" to="." method="_on_botao_fase_2_pressed"]
+[connection signal="pressed" from="BotaoFase3" to="." method="_on_botao_fase_3_pressed"]
+[connection signal="pressed" from="BotaoFase4" to="." method="_on_botao_fase_4_pressed"]
+[connection signal="pressed" from="BotaoFase5" to="." method="_on_botao_fase_5_pressed"]
+[connection signal="pressed" from="BotaoFase6" to="." method="_on_botao_fase_6_pressed"]
+[connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://qd0jnswelnha"]
+
+[ext_resource type="Script" uid="uid://cce2gp4tbxlij" path="res://CODIGOS/entradafase.gd" id="1_mjoom"]
+[ext_resource type="VideoStream" uid="uid://b8d3u0euxi1hy" path="res://ARTES/entradafase.ogv" id="2_nly4j"]
+
+[node name="EntradaFase" type="Control" unique_id=1504700827]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mjoom")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=862479391]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 639.0
+offset_bottom = 358.0
+stream = ExtResource("2_nly4j")
+autoplay = true
+expand = true

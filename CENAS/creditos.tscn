@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://w0neg73ictxf"]
+
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="1_5xvoa"]
+[ext_resource type="Texture2D" uid="uid://cl0ujo8lgf6my" path="res://ARTES/sair.png" id="1_xurme"]
+
+[node name="Creditos" type="Control" unique_id=790404233]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=158412108]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.13491163, 0.008295311, 0.20096722, 1)
+
+[node name="Voltar" type="Button" parent="." unique_id=1390669321]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 30.0
+offset_bottom = 37.0
+icon = ExtResource("1_xurme")
+flat = true
+script = ExtResource("1_5xvoa")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=614557946]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 100.0
+offset_right = 444.0
+offset_bottom = 234.0
+rotation = -0.0003948028
+text = "Diretor: Bryan
+Criador: Bryan
+Instagram: ibryanx
+empresa parceira: 
+perspectiva.games"
+
+[connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]

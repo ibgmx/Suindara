@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dwtvwixgay4qj"]
+
+[ext_resource type="Script" uid="uid://dhvc42qti6o1m" path="res://CODIGOS/infofase.gd" id="1_ck7p5"]
+[ext_resource type="VideoStream" uid="uid://dqdce3a01f6ex" path="res://ARTES/Ritual.ogv" id="2_ck7p5"]
+[ext_resource type="Texture2D" uid="uid://cl0ujo8lgf6my" path="res://ARTES/sair.png" id="3_v6it4"]
+[ext_resource type="Texture2D" uid="uid://bvc5q1pvjomsf" path="res://ARTES/botao.png" id="3_wm1xy"]
+
+[node name="InfoFase" type="Control" unique_id=179661980]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ck7p5")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1582179500]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.34, 0.34)
+audio_track = 1
+stream = ExtResource("2_ck7p5")
+autoplay = true
+loop = true
+
+[node name="Tempo" type="Label" parent="." unique_id=69467745]
+texture_filter = 1
+layout_mode = 0
+offset_left = 119.0
+offset_top = 96.0
+offset_right = 264.0
+offset_bottom = 119.0
+text = "0"
+
+[node name="NomeFase" type="Label" parent="." unique_id=25079305]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 128.0
+offset_right = 160.0
+offset_bottom = 151.0
+text = "0"
+
+[node name="Descricao" type="Label" parent="." unique_id=89931981]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 159.0
+offset_right = 161.0
+offset_bottom = 182.0
+text = "0"
+
+[node name="VoltarFases" type="Button" parent="." unique_id=1546998127 groups=["botoes"]]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 34.0
+offset_bottom = 37.0
+icon = ExtResource("3_v6it4")
+flat = true
+
+[node name="IniciarFase" type="Button" parent="." unique_id=870803223 groups=["botoes"]]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = 78.0
+offset_right = 52.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "INICIAR"
+icon = ExtResource("3_wm1xy")
+flat = true
+icon_alignment = 1
+
+[node name="ColorRectFade" type="ColorRect" parent="." unique_id=1352588808]
+light_mask = 512
+visibility_layer = 512
+layout_mode = 0
+offset_left = -1.0
+offset_right = 637.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="VoltarFases" to="." method="_on_voltar_fases_pressed"]
+[connection signal="pressed" from="IniciarFase" to="." method="_on_iniciar_fase_pressed"]

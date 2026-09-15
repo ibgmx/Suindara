@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://ttgpqxf0kivy"]
+
+[ext_resource type="Script" uid="uid://dsavpodibr7a0" path="res://CODIGOS/telavitoria.gd" id="1_i1fcg"]
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="2_8l8hi"]
+[ext_resource type="Texture2D" uid="uid://bvc5q1pvjomsf" path="res://ARTES/botao.png" id="2_o7ynx"]
+[ext_resource type="AudioStream" uid="uid://c3m6t4ydu64hq" path="res://SONS/vitoria.mp3" id="3_i1fcg"]
+
+[sub_resource type="GDScript" id="GDScript_8l8hi"]
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	Estatisticas.reiniciar_contador_tentativas()
+
+	get_tree().change_scene_to_file(\"res://CENAS/fases.tscn\")
+"
+
+[node name="TelaVitoria" type="Control" unique_id=1459925473]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i1fcg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1362619309]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Fases" type="Button" parent="." unique_id=1587546168]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 261.0
+offset_right = 376.0
+offset_bottom = 301.0
+text = "FASES
+"
+icon = ExtResource("2_o7ynx")
+flat = true
+icon_alignment = 1
+script = SubResource("GDScript_8l8hi")
+
+[node name="Tempo" type="Label" parent="." unique_id=1892208011]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 101.0
+offset_right = 202.0
+offset_bottom = 124.0
+text = "oi"
+
+[node name="Dashs" type="Label" parent="." unique_id=820199083]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 118.0
+offset_right = 201.0
+offset_bottom = 141.0
+text = "oi"
+
+[node name="Flechas" type="Label" parent="." unique_id=1543758823]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 134.0
+offset_right = 201.0
+offset_bottom = 157.0
+text = "oi"
+
+[node name="Inimigos" type="Label" parent="." unique_id=1288692481]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 151.0
+offset_right = 201.0
+offset_bottom = 174.0
+text = "oi"
+
+[node name="Tentativas" type="Label" parent="." unique_id=1077775919]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 166.0
+offset_right = 201.0
+offset_bottom = 189.0
+text = "oi"
+
+[node name="Voltar2" type="Button" parent="." unique_id=638049968]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 297.0
+offset_right = 376.0
+offset_bottom = 337.0
+text = "INÍCIO"
+icon = ExtResource("2_o7ynx")
+flat = true
+icon_alignment = 1
+script = ExtResource("2_8l8hi")
+
+[node name="Reiniciar" type="Button" parent="." unique_id=152597369]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 224.0
+offset_right = 376.0
+offset_bottom = 264.0
+text = "REINICIAR"
+icon = ExtResource("2_o7ynx")
+flat = true
+icon_alignment = 1
+
+[node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=867882759]
+stream = ExtResource("3_i1fcg")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
+[node name="Vitoria" type="Label" parent="." unique_id=797390094]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 229.0
+offset_top = 39.0
+offset_right = 355.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+text = "VOCÊ FOI SUFICIENTE"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Fases" to="Fases" method="_on_pressed"]
+[connection signal="pressed" from="Voltar2" to="Voltar2" method="_on_pressed"]
+[connection signal="pressed" from="Reiniciar" to="." method="_on_reiniciar_pressed"]

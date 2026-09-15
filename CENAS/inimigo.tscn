@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ffolfh07vv5l"]
+
+[ext_resource type="Script" uid="uid://dm1osiq1y4lwn" path="res://CODIGOS/inimigo.gd" id="1_045kk"]
+[ext_resource type="Texture2D" uid="uid://c02kq23wd7dch" path="res://ARTES/inimigo ex.png" id="2_045kk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vavwf"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dcx3"]
+radius = 2.0125785
+
+[node name="Inimigo" type="CharacterBody2D" unique_id=1503669897]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_045kk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140353155]
+texture_filter = 1
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_045kk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=531808720]
+shape = SubResource("CircleShape2D_vavwf")
+
+[node name="AreaDano" type="Area2D" parent="." unique_id=146800939]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=1315254649]
+position = Vector2(-7.1525574e-07, 7.1525574e-07)
+scale = Vector2(7.95, 7.95)
+shape = SubResource("CircleShape2D_8dcx3")

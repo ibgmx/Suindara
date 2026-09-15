@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bcss671sp5a4y"]
+
+[ext_resource type="Script" uid="uid://hhwq08360k1o" path="res://CODIGOS/fases.gd" id="1_dfyso"]
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="2_dfyso"]
+[ext_resource type="Texture2D" uid="uid://bvc5q1pvjomsf" path="res://ARTES/botao.png" id="2_r5g5u"]
+[ext_resource type="Texture2D" uid="uid://cl0ujo8lgf6my" path="res://ARTES/sair.png" id="3_r5g5u"]
+
+[node name="Fases" type="Control" unique_id=1798600450]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dfyso")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2012859158]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=714206963]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.13491163, 0.008295311, 0.20096722, 1)
+
+[node name="BotaoFase1" type="Button" parent="." unique_id=73620612 groups=["botoes"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 112.0
+offset_right = 147.0
+offset_bottom = 143.0
+text = "FASE 1"
+icon = ExtResource("2_r5g5u")
+flat = true
+icon_alignment = 1
+
+[node name="BotaoFase2" type="Button" parent="." unique_id=1052881658 groups=["botoes"]]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 112.0
+offset_right = 373.0
+offset_bottom = 152.0
+text = "FASE 2"
+icon = ExtResource("2_r5g5u")
+flat = true
+icon_alignment = 1
+
+[node name="BotaoFase3" type="Button" parent="." unique_id=1071537431 groups=["botoes"]]
+texture_filter = 1
+layout_mode = 0
+offset_left = 459.0
+offset_top = 114.0
+offset_right = 563.0
+offset_bottom = 154.0
+text = "FASE 3"
+icon = ExtResource("2_r5g5u")
+flat = true
+icon_alignment = 1
+
+[node name="BotaoFase4" type="Button" parent="." unique_id=17581202 groups=["botoes"]]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 222.0
+offset_right = 175.0
+offset_bottom = 253.0
+text = "FASE 4"
+icon = ExtResource("2_r5g5u")
+flat = true
+icon_alignment = 1
+
+[node name="BotaoFase5" type="Button" parent="." unique_id=128069362 groups=["botoes"]]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 222.0
+offset_right = 372.0
+offset_bottom = 262.0
+text = "FASE 5"
+icon = ExtResource("2_r5g5u")
+flat = true
+icon_alignment = 1
+
+[node name="BotaoFase6" type="Button" parent="." unique_id=201492094 groups=["botoes"]]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 221.0
+offset_right = 541.0
+offset_bottom = 252.0
+text = "FASE 6"
+icon = ExtResource("2_r5g5u")
+icon_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1697432898 groups=["botoes"]]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 317.0
+offset_right = 124.0
+offset_bottom = 356.0
+text = "COMEÇA LOGO"
+
+[node name="Voltar" type="Button" parent="." unique_id=488054648 groups=["botoes"]]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 30.0
+offset_bottom = 37.0
+icon = ExtResource("3_r5g5u")
+flat = true
+script = ExtResource("2_dfyso")
+
+[node name="ColorRectFadeEntrada" type="ColorRect" parent="." unique_id=1350007805]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 640.0
+offset_bottom = 361.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="BotaoFase1" to="." method="_on_botao_fase_1_pressed"]
+[connection signal="pressed" from="BotaoFase2" to="." method="_on_botao_fase_2_pressed"]
+[connection signal="pressed" from="BotaoFase3" to="." method="_on_botao_fase_3_pressed"]
+[connection signal="pressed" from="BotaoFase4" to="." method="_on_botao_fase_4_pressed"]
+[connection signal="pressed" from="BotaoFase5" to="." method="_on_botao_fase_5_pressed"]
+[connection signal="pressed" from="BotaoFase6" to="." method="_on_botao_fase_6_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]

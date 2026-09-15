@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://hg1tle3f0vfc"]
+
+[ext_resource type="Script" uid="uid://dnkdynyb1g31r" path="res://CODIGOS/flecha.gd" id="1_03xfu"]
+[ext_resource type="Texture2D" uid="uid://blldufnmmw322" path="res://ARTES/flecha.png" id="1_bl6w7"]
+[ext_resource type="Texture2D" uid="uid://siulljpbn3jj" path="res://ARTES/luz.png" id="3_r12x3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbx3a"]
+size = Vector2(17.75, 5.5)
+
+[node name="Flecha" type="Area2D" unique_id=426979372]
+script = ExtResource("1_03xfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641264795]
+texture_filter = 1
+position = Vector2(2.9802322e-08, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_bl6w7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=890553299]
+position = Vector2(-0.125, -0.5)
+shape = SubResource("RectangleShape2D_bbx3a")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=693461440]
+color = Color(1, 1, 0.98039216, 1)
+energy = 0.25
+texture = ExtResource("3_r12x3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

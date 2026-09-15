@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bcss671sp5a4y"]
+
+[ext_resource type="Script" uid="uid://b1ij72efts65y" path="res://BOTOES/botao_fase_1.gd" id="1_ellv1"]
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="2_dfyso"]
+
+[node name="Fases" type="Control" unique_id=1798600450]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="BotaoFase1" type="Button" parent="." unique_id=73620612]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 56.0
+offset_right = 141.0
+offset_bottom = 87.0
+text = "FASE 1"
+script = ExtResource("1_ellv1")
+
+[node name="BotaoFase2" type="Button" parent="." unique_id=1052881658]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 57.0
+offset_right = 305.0
+offset_bottom = 88.0
+text = "EM BREVE"
+
+[node name="BotaoFase3" type="Button" parent="." unique_id=1071537431]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 57.0
+offset_right = 442.0
+offset_bottom = 88.0
+text = "EM BREVE"
+
+[node name="BotaoFase4" type="Button" parent="." unique_id=17581202]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 147.0
+offset_right = 171.0
+offset_bottom = 178.0
+text = "EM BREVE"
+
+[node name="BotaoFase5" type="Button" parent="." unique_id=128069362]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 148.0
+offset_right = 309.0
+offset_bottom = 179.0
+text = "EM BREVE"
+
+[node name="Voltar" type="Button" parent="." unique_id=1189337189]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 30.0
+offset_bottom = 37.0
+text = "X"
+script = ExtResource("2_dfyso")
+
+[connection signal="pressed" from="BotaoFase1" to="." method="_on_botao_fase_1_pressed"]
+[connection signal="pressed" from="BotaoFase1" to="BotaoFase1" method="_on_pressed"]
+[connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]

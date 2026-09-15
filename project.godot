@@ -1,0 +1,83 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Indara"
+run/main_scene="uid://dvg8mgfs3kpkt"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cobjvr2h0qjcs"
+
+[autoload]
+
+Estatisticas="*uid://cv4a3nec4gwhv"
+Gerenciadorfases="*uid://opfaraxbhly7"
+Cursor="*uid://dvkkt01eorywa"
+controles="*uid://bktp2fxex6ej4"
+navegacao="*uid://b5exn23fqyyvg"
+Efeito="*uid://dv4c8k3qqs4nb"
+SomFase="*uid://dmshto4kygmto"
+SonsUi="*uid://dvyu88vlwweec"
+SomMenu="*uid://uavk83b3bcub"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Night Hunter"
+
+[global]
+
+res=false
+aa=false
+fonte.ttf=false
+fonte=false
+tema=false
+
+[global_group]
+
+botoes=""
+
+[gui]
+
+theme/custom_font="uid://53heucpsrpg2"
+
+[input]
+
+mouse_left={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(62, 13),"global_position":Vector2(71, 61),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

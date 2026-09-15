@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://uavk83b3bcub"]
+
+[ext_resource type="AudioStream" uid="uid://2njpmqktchyb" path="res://SONS/fundo.mp3" id="1_k2of1"]
+
+[node name="SomMenu" type="AudioStreamPlayer" unique_id=1562147159]
+stream = ExtResource("1_k2of1")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true

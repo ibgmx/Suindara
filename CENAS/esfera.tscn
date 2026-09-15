@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://dsfub1p5plnbi"]
+
+[ext_resource type="Script" uid="uid://cnib7bbipi52k" path="res://CODIGOS/esfera_energia.gd" id="1_bwbcu"]
+[ext_resource type="Texture2D" uid="uid://c4iahxsyatyjl" path="res://ARTES/pedestal.png" id="1_lpjw4"]
+[ext_resource type="Texture2D" uid="uid://bevc06k0d4t23" path="res://ARTES/esfera.png" id="2_lpjw4"]
+[ext_resource type="Texture2D" uid="uid://siulljpbn3jj" path="res://ARTES/luz.png" id="4_kcvkc"]
+[ext_resource type="Shader" uid="uid://blf2p4me3ehtl" path="res://SHADERS/explosao.gdshader" id="5_mdt8a"]
+[ext_resource type="AudioStream" uid="uid://cgywm270sp50a" path="res://SONS/explosao_esfera.mp3" id="6_r7woc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5aq51"]
+size = Vector2(20, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhy0g"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(0, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feprw"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(54, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4fxc"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(108, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma3aj"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(162, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxeh4"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(216, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07lhq"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(270, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0hxn"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(324, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy20l"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(378, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3jwk"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(432, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftdjc"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(486, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a0uu"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(540, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mfcn"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(594, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf8ek"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(648, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl58h"]
+atlas = ExtResource("2_lpjw4")
+region = Rect2(702, 0, 54, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcvkc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhy0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feprw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4fxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma3aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxeh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07lhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0hxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy20l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3jwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftdjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a0uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mfcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf8ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl58h")
+}],
+"loop": 0,
+"name": &"padrão",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdt8a"]
+radius = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n3j7"]
+shader = ExtResource("5_mdt8a")
+shader_parameter/progresso = 0.9550000453625
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ji4vr"]
+shader = ExtResource("5_mdt8a")
+shader_parameter/progresso = 0.130000006175
+
+[node name="Esfera" type="Node2D" unique_id=989973632]
+
+[node name="Pedestal" type="Area2D" parent="." unique_id=870819619]
+texture_filter = 1
+position = Vector2(0, -58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pedestal" unique_id=1858401445]
+texture_filter = 1
+texture = ExtResource("1_lpjw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pedestal" unique_id=1420855255]
+shape = SubResource("RectangleShape2D_5aq51")
+
+[node name="EsferaEnergia" type="Area2D" parent="." unique_id=1037263416]
+script = ExtResource("1_bwbcu")
+
+[node name="Esfera" type="AnimatedSprite2D" parent="EsferaEnergia" unique_id=428570851]
+light_mask = 5
+texture_filter = 1
+scale = Vector2(0.6875021, 0.64285713)
+sprite_frames = SubResource("SpriteFrames_kcvkc")
+animation = &"padrão"
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EsferaEnergia" unique_id=1183123505]
+shape = SubResource("CircleShape2D_mdt8a")
+
+[node name="CameraVitoria" type="Camera2D" parent="EsferaEnergia" unique_id=1240284798]
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="PointLight2D" type="PointLight2D" parent="EsferaEnergia" unique_id=1426881393]
+light_mask = 2
+material = SubResource("ShaderMaterial_2n3j7")
+color = Color(0.2206957, 3.8432405e-05, 0.22576243, 1)
+energy = 3.0
+texture = ExtResource("4_kcvkc")
+
+[node name="TransicaoVitoria" type="CanvasLayer" parent="EsferaEnergia" unique_id=618216414]
+
+[node name="EfeitoRaios" type="ColorRect" parent="EsferaEnergia/TransicaoVitoria" unique_id=614777544]
+material = SubResource("ShaderMaterial_ji4vr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Explosao" type="AudioStreamPlayer" parent="EsferaEnergia" unique_id=1525344825]
+stream = ExtResource("6_r7woc")
+bus = &"Efeitos"
+
+[connection signal="body_entered" from="EsferaEnergia" to="EsferaEnergia" method="_on_body_entered"]

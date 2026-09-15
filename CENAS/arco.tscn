@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bd5tdwv61opwm"]
+
+[ext_resource type="Script" uid="uid://br3qkpghmliq0" path="res://CODIGOS/arco.gd" id="1_3ry1p"]
+[ext_resource type="Texture2D" uid="uid://cusv5ebqj0o76" path="res://ARTES/arco.png" id="2_s307p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wauk"]
+atlas = ExtResource("2_s307p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b7u8"]
+atlas = ExtResource("2_s307p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a3tb"]
+atlas = ExtResource("2_s307p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_naoo1"]
+atlas = ExtResource("2_s307p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vxis"]
+atlas = ExtResource("2_s307p")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbx3a"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_0wauk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_4b7u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a3tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_naoo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vxis")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_0wauk")
+}],
+"loop": 1,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[node name="Arco" type="Node2D" unique_id=1687044339]
+script = ExtResource("1_3ry1p")
+
+[node name="arco" type="AnimatedSprite2D" parent="." unique_id=1146039610]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bbx3a")

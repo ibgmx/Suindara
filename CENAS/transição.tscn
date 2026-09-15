@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://c8hxcnyx6mwpn"]
+
+[ext_resource type="Shader" uid="uid://vs6nvrjmc2cs" path="res://SHADERS/transição.gdshader" id="2_x37fc"]
+
+[sub_resource type="GDScript" id="GDScript_asa7e"]
+script/source = "extends Node2D
+
+@onready var animation_player: AnimationPlayer = $CanvasLayer/ColorRect/AnimationPlayer
+
+var fazendo_transicao: bool = false
+
+
+func _ready():
+
+	get_tree().scene_changed.connect(_quando_cena_mudar)
+
+
+func ir_para(cena: String) -> void:
+
+	if fazendo_transicao:
+		return
+
+	fazendo_transicao = true
+
+	animation_player.play(\"fechar\")
+
+	await animation_player.animation_finished
+
+	get_tree().change_scene_to_file(cena)
+
+
+func _quando_cena_mudar():
+
+	if fazendo_transicao:
+
+		animation_player.play(\"abrir\")
+
+		await animation_player.animation_finished
+
+		fazendo_transicao = false
+"
+
+[sub_resource type="GDScript" id="GDScript_3xcij"]
+script/source = "extends CanvasLayer
+
+@onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
+
+var cena_destino: String = \"\"
+
+
+func iniciar(cena: String) -> void:
+
+	cena_destino = cena
+
+	animation_player.play(\"fechar\")
+
+	await animation_player.animation_finished
+
+	get_tree().change_scene_to_file(cena_destino)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lbhu"]
+shader = ExtResource("2_x37fc")
+shader_parameter/progresso = 0.0
+shader_parameter/tamanho_pixel = 32.000001425
+shader_parameter/cor = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_3xcij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/progresso")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x37fc"]
+resource_name = "abrir"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/progresso")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_24i70"]
+resource_name = "fechar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/progresso")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vwwo"]
+_data = {
+&"RESET": SubResource("Animation_3xcij"),
+&"abrir": SubResource("Animation_x37fc"),
+&"fechar": SubResource("Animation_24i70")
+}
+
+[node name="Transição" type="Node2D" unique_id=390390468]
+script = SubResource("GDScript_asa7e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=735728645]
+layer = 100
+script = SubResource("GDScript_3xcij")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=366798443]
+material = SubResource("ShaderMaterial_6lbhu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=200284938]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5vwwo")

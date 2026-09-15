@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://cmgyamw3n7o10"]
+
+[ext_resource type="Script" uid="uid://du3vtuaie1lqj" path="res://CODIGOS/teladerrota.gd" id="1_sqhm6"]
+[ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="2_sqhm6"]
+[ext_resource type="Texture2D" uid="uid://bvc5q1pvjomsf" path="res://ARTES/botao.png" id="2_wxjim"]
+[ext_resource type="AudioStream" uid="uid://cbuwep4ihfr5t" path="res://SONS/derrota.mp3" id="3_sqhm6"]
+
+[sub_resource type="GDScript" id="GDScript_8l8hi"]
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	Estatisticas.reiniciar_contador_tentativas()
+
+	get_tree().change_scene_to_file(\"res://CENAS/fases.tscn\")
+"
+
+[node name="TelaDerrota" type="Control" unique_id=1358517025]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sqhm6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1839637663]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="BotaoJogar" type="Button" parent="." unique_id=1511488758]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 234.0
+offset_right = 374.0
+offset_bottom = 274.0
+text = "FASES
+"
+icon = ExtResource("2_wxjim")
+flat = true
+icon_alignment = 1
+script = SubResource("GDScript_8l8hi")
+
+[node name="Voltar" type="Button" parent="." unique_id=1757299394]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 271.0
+offset_right = 374.0
+offset_bottom = 311.0
+text = "INÍCIO"
+icon = ExtResource("2_wxjim")
+flat = true
+icon_alignment = 1
+script = ExtResource("2_sqhm6")
+
+[node name="Reiniciar" type="Button" parent="." unique_id=735636919]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 197.0
+offset_right = 374.0
+offset_bottom = 237.0
+text = "REINICIAR"
+icon = ExtResource("2_wxjim")
+flat = true
+icon_alignment = 1
+
+[node name="Tempo" type="Label" parent="." unique_id=1171296586]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 101.0
+offset_right = 202.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "oi"
+
+[node name="Dashs" type="Label" parent="." unique_id=1001731816]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 117.0
+offset_right = 201.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "oi"
+
+[node name="Flechas" type="Label" parent="." unique_id=148677369]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 134.0
+offset_right = 201.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "oi"
+
+[node name="Inimigos" type="Label" parent="." unique_id=566740031]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 151.0
+offset_right = 201.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "oi"
+
+[node name="Tentativas" type="Label" parent="." unique_id=906316772]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 167.0
+offset_right = 201.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "oi"
+
+[node name="MusicaDerrota" type="AudioStreamPlayer" parent="." unique_id=985485960]
+stream = ExtResource("3_sqhm6")
+autoplay = true
+bus = &"Musica"
+
+[node name="Fracasso" type="Label" parent="." unique_id=683591792]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 229.0
+offset_top = 39.0
+offset_right = 355.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+text = "VOCÊ FRACASSOU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BotaoJogar" to="BotaoJogar" method="_on_pressed"]
+[connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]
+[connection signal="pressed" from="Reiniciar" to="." method="_on_reiniciar_pressed"]

@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dvhx1160ikalg"]
+
+[ext_resource type="Script" uid="uid://bmn6pnth0lmcb" path="res://CODIGOS/pausa.gd" id="1_jsunn"]
+[ext_resource type="Shader" uid="uid://c0oqs5wojdbwm" path="res://SHADERS/blur.gdshader" id="2_i2ymg"]
+[ext_resource type="Texture2D" uid="uid://bvc5q1pvjomsf" path="res://ARTES/botao.png" id="3_65qtm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iupvx"]
+shader = ExtResource("2_i2ymg")
+
+[node name="Pausa" type="CanvasLayer" unique_id=1437946171]
+script = ExtResource("1_jsunn")
+
+[node name="Desfoque" type="ColorRect" parent="." unique_id=652441315]
+material = SubResource("ShaderMaterial_iupvx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="titulo" type="Label" parent="." unique_id=2090831396]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 10.0
+offset_right = 26.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "PAUSA"
+
+[node name="Reiniciar" type="Button" parent="." unique_id=1413533822 groups=["botoes"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 126.0
+offset_right = 52.0
+offset_bottom = 166.0
+grow_horizontal = 2
+text = "REINICIAR"
+icon = ExtResource("3_65qtm")
+flat = true
+icon_alignment = 1
+
+[node name="Continuar" type="Button" parent="." unique_id=1594811175 groups=["botoes"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 90.0
+offset_right = 52.0
+offset_bottom = 130.0
+grow_horizontal = 2
+text = "CONTINUAR"
+icon = ExtResource("3_65qtm")
+flat = true
+icon_alignment = 1
+
+[node name="Configuraçoes" type="Button" parent="." unique_id=1811164554 groups=["botoes"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 235.0
+offset_right = 71.0
+offset_bottom = 266.0
+grow_horizontal = 2
+text = "CONFIGS"
+icon = ExtResource("3_65qtm")
+flat = true
+icon_alignment = 1
+
+[node name="Inicio" type="Button" parent="." unique_id=291164484 groups=["botoes"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = 19.0
+offset_right = 52.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "INÍCIO"
+icon = ExtResource("3_65qtm")
+flat = true
+icon_alignment = 1
+
+[node name="Fases" type="Button" parent="." unique_id=109316571 groups=["botoes"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -18.0
+offset_right = 52.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FASES"
+icon = ExtResource("3_65qtm")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Configuraçoes" to="." method="_on_configuraçoes_pressed"]
+[connection signal="pressed" from="Inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="Fases" to="." method="_on_fases_pressed"]

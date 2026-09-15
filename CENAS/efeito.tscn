@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dv4c8k3qqs4nb"]
+
+[ext_resource type="Script" uid="uid://byped1hsqjwq6" path="res://CODIGOS/efeito.gd" id="1_axnyw"]
+[ext_resource type="Shader" uid="uid://vs6nvrjmc2cs" path="res://SHADERS/transição.gdshader" id="2_e26am"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5aq51"]
+shader = ExtResource("2_e26am")
+shader_parameter/progresso = 0.6250000296875
+shader_parameter/tamanho_pixel = 32.000001425
+shader_parameter/cor = Color(0, 0, 0, 1)
+
+[node name="Efeito" type="CanvasLayer" unique_id=648573423]
+script = ExtResource("1_axnyw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1866155128]
+process_mode = 3
+material = SubResource("ShaderMaterial_5aq51")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
