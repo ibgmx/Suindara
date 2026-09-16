@@ -46,7 +46,7 @@ offset_left = 59.0
 offset_top = 114.0
 offset_right = 163.0
 offset_bottom = 154.0
-text = "AGARRAR A"
+text = "AGARRAR"
 icon = ExtResource("2_4ryny")
 flat = true
 icon_alignment = 1
@@ -57,7 +57,7 @@ offset_left = 47.0
 offset_top = 162.0
 offset_right = 177.0
 offset_bottom = 202.0
-text = "PARAR AR S "
+text = "PARAR AR"
 icon = ExtResource("2_4ryny")
 flat = true
 icon_alignment = 1
@@ -91,30 +91,30 @@ text = "MINIMIZAR - F4"
 
 [node name="musica" type="Label" parent="." unique_id=796280861]
 layout_mode = 0
-offset_left = 357.0
+offset_left = 401.0
 offset_top = 181.0
-offset_right = 459.0
-offset_bottom = 196.0
+offset_right = 503.0
+offset_bottom = 203.0
 text = "MUSICAS"
 
 [node name="efeitos sonoros" type="Label" parent="." unique_id=1141142481]
 layout_mode = 0
-offset_left = 357.0
+offset_left = 401.0
 offset_top = 114.0
-offset_right = 459.0
-offset_bottom = 129.0
+offset_right = 547.0
+offset_bottom = 136.0
 text = "EFEITOS SONOROS"
 
 [node name="Efeitos" type="HSlider" parent="." unique_id=352273636]
 layout_mode = 0
-offset_left = 357.0
+offset_left = 401.0
 offset_top = 101.0
-offset_right = 474.0
+offset_right = 518.0
 offset_bottom = 202.0
 
 [node name="Musicas" type="HSlider" parent="." unique_id=1387890273]
 layout_mode = 0
-offset_left = 357.0
+offset_left = 401.0
 offset_top = 187.0
-offset_right = 473.0
+offset_right = 517.0
 offset_bottom = 251.0
