@@ -8,12 +8,6 @@ size = Vector2(17.75, 5.5)
 
 [node name="Flecha" type="Area2D" unique_id=426979372]
 script = ExtResource("1_03xfu")
-velocidade = null
-area_perseguicao = null
-velocidade_retorno = null
-tempo_recuo_dano = null
-distancia_recuo_dano = null
-tempo_respawn = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641264795]
 texture_filter = 1
@@ -22,7 +16,6 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_bl6w7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=890553299]
-position = Vector2(-0.125, -0.5)
 shape = SubResource("RectangleShape2D_bbx3a")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

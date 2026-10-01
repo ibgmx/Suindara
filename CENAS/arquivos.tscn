@@ -2,8 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cl0ujo8lgf6my" path="res://ARTES/sair.png" id="1_kf7a4"]
 [ext_resource type="Script" uid="uid://c1rvdqrkjklt7" path="res://CODIGOS/arquivos.gd" id="1_mcfl5"]
+[ext_resource type="Texture2D" uid="uid://dsmdsknl48lnk" path="res://ARTES/fundo arquivos.png" id="2_cit0g"]
 [ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="2_wkmkr"]
-[ext_resource type="Texture2D" uid="uid://bylngqw8iu0et" path="res://ARTES/bloco.png" id="4_gaiqj"]
+[ext_resource type="Texture2D" uid="uid://cw44f1mhmrtbc" path="res://ARTES/quadro.png" id="4_gaiqj"]
+[ext_resource type="Texture2D" uid="uid://cjki7cdscd02p" path="res://ARTES/quadro olho.png" id="5_cit0g"]
 
 [node name="Arquivos" type="Control" unique_id=1654929832]
 layout_mode = 3
@@ -14,14 +16,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mcfl5")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1097938925]
+[node name="ColorRect" type="TextureRect" parent="." unique_id=164700023]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1943.0
+offset_bottom = 1096.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.15222707, 0.04847621, 0.005981503, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_cit0g")
 
 [node name="Voltar" type="Button" parent="." unique_id=970286461]
 texture_filter = 1
@@ -42,13 +48,15 @@ anchor_left = 0.5
 anchor_top = 0.36600003
 anchor_right = 0.5
 anchor_bottom = 0.59000003
-offset_left = -162.0
-offset_top = -65.76001
-offset_right = -130.0
-offset_bottom = -114.40001
+offset_left = -184.0
+offset_top = -94.76001
+offset_right = -152.0
+offset_bottom = -134.40001
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_gaiqj")
+texture_hover = ExtResource("5_cit0g")
 
 [node name="Quadro2" type="TextureButton" parent="." unique_id=1333989122]
 texture_filter = 1
@@ -56,49 +64,59 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 279.0
-offset_top = 69.0
-offset_right = -321.0
-offset_bottom = -251.0
+offset_left = 272.0
+offset_top = 37.0
+offset_right = -336.0
+offset_bottom = -282.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_gaiqj")
+texture_hover = ExtResource("5_cit0g")
 
 [node name="Quadro3" type="TextureButton" parent="." unique_id=1981940636]
 texture_filter = 1
 layout_mode = 0
-offset_left = 401.0
-offset_top = 77.0
-offset_right = 441.0
-offset_bottom = 117.0
+offset_left = 408.0
+offset_top = 37.0
+offset_right = 440.0
+offset_bottom = 78.0
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_gaiqj")
+texture_hover = ExtResource("5_cit0g")
 
 [node name="Quadro4" type="TextureButton" parent="." unique_id=2018178613]
 texture_filter = 1
 layout_mode = 0
-offset_left = 161.0
-offset_top = 199.0
-offset_right = 201.0
-offset_bottom = 239.0
+offset_left = 136.0
+offset_top = 200.0
+offset_right = 168.0
+offset_bottom = 241.0
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_gaiqj")
+texture_hover = ExtResource("5_cit0g")
 
 [node name="Quadro5" type="TextureButton" parent="." unique_id=1505684968]
 texture_filter = 1
 layout_mode = 0
-offset_left = 285.0
-offset_top = 201.0
-offset_right = 325.0
+offset_left = 272.0
+offset_top = 200.0
+offset_right = 304.0
 offset_bottom = 241.0
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_gaiqj")
+texture_hover = ExtResource("5_cit0g")
 
 [node name="Quadro6" type="TextureButton" parent="." unique_id=61653778]
 texture_filter = 1
 layout_mode = 0
-offset_left = 420.0
-offset_top = 199.0
-offset_right = 460.0
-offset_bottom = 239.0
+offset_left = 408.0
+offset_top = 200.0
+offset_right = 440.0
+offset_bottom = 241.0
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_gaiqj")
+texture_hover = ExtResource("5_cit0g")
 
 [connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]
 [connection signal="pressed" from="Quadro1" to="." method="_on_quadro_1_pressed"]

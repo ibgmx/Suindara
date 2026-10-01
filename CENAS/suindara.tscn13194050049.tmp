@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnu3wfjfuim42"]
 
 [ext_resource type="Script" uid="uid://drmx7erhasy3y" path="res://CODIGOS/suindara.gd" id="1_rqxje"]
+[ext_resource type="Shader" uid="uid://41war2pqva5l" path="res://luz.gdshader" id="2_43a44"]
 [ext_resource type="Texture2D" uid="uid://ftjspa3kgsdh" path="res://ARTES/seta_desativada.png" id="2_mto67"]
 [ext_resource type="PackedScene" uid="uid://bd5tdwv61opwm" path="res://CENAS/arco.tscn" id="3_i5oyl"]
 [ext_resource type="Texture2D" uid="uid://dqhbqayi68u1a" path="res://ARTES/seta_ativada.png" id="3_q87rk"]
@@ -14,6 +15,11 @@
 [ext_resource type="AudioStream" uid="uid://dhi202kju4fj6" path="res://SONS/risada-ma.mp3" id="12_w1qe5"]
 [ext_resource type="Shader" uid="uid://boqlawi6vkiax" path="res://SHADERS/consumo.gdshader" id="12_w08wl"]
 [ext_resource type="AudioStream" uid="uid://cl1jch3224qhm" path="res://SONS/dano.mp3" id="13_3cng2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4fxc"]
+shader = ExtResource("2_43a44")
+shader_parameter/intensidade = 1.0
+shader_parameter/suavidade = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mto67"]
 atlas = ExtResource("4_mto67")
@@ -108,6 +114,7 @@ voltas_derrota = 3.0
 
 [node name="LuzIndara" type="PointLight2D" parent="Indara" unique_id=607772942]
 light_mask = 5
+material = SubResource("ShaderMaterial_l4fxc")
 position = Vector2(1, 3)
 shadow_enabled = true
 texture = ExtResource("5_txmom")

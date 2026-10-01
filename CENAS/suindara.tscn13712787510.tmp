@@ -106,7 +106,7 @@ script = ExtResource("1_rqxje")
 duracao_animacao_derrota = 3.0
 voltas_derrota = 3.0
 
-[node name="LuzIndara" type="PointLight2D" parent="Indara" unique_id=607772942]
+[node name="Luz" type="PointLight2D" parent="Indara" unique_id=607772942]
 light_mask = 5
 position = Vector2(1, 3)
 shadow_enabled = true
