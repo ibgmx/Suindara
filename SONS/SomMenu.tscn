@@ -4,6 +4,5 @@
 
 [node name="SomMenu" type="AudioStreamPlayer" unique_id=1562147159]
 stream = ExtResource("1_k2of1")
-autoplay = true
 bus = &"Musica"
 parameters/looping = true

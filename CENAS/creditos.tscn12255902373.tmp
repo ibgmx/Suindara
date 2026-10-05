@@ -30,16 +30,15 @@ icon = ExtResource("1_xurme")
 flat = true
 script = ExtResource("1_5xvoa")
 
-[node name="Texto" type="Label" parent="." unique_id=724323025]
+[node name="Label" type="Label" parent="." unique_id=724323025]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
+anchors_preset = -1
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 243.0
-offset_top = 82.0
-offset_right = 393.0
-offset_bottom = 254.0
+offset_left = 256.0
+offset_top = 86.0
+offset_right = 406.0
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "CRIADO POR: 
@@ -54,12 +53,12 @@ vertical_alignment = 1
 
 [node name="Saiba mais" type="RichTextLabel" parent="." unique_id=1779174838]
 layout_mode = 0
-offset_left = 272.0
+offset_left = 284.0
 offset_top = 329.0
-offset_right = 364.0
+offset_right = 376.0
 offset_bottom = 369.0
 bbcode_enabled = true
-text = "[url=https://bryan-machado.netlify.app/] Saiba mais [/url]"
+text = "[url=https://www.instagram.com/ibryanx] Saiba mais [/url]"
 script = ExtResource("3_kospo")
 
 [connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]

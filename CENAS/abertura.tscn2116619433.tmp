@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ds8mso1nm5tr8"]
+
+[ext_resource type="Script" uid="uid://dve66e38vmyd0" path="res://CODIGOS/abertura.gd" id="1_aeton"]
+[ext_resource type="Texture2D" uid="uid://ommikk0o21o3" path="res://ARTES/Perspectiva.png" id="2_6m4ak"]
+[ext_resource type="AudioStream" uid="uid://h7es1pj57jyf" path="res://SONS/abertura.mp3" id="2_7edad"]
+
+[node name="Abertura" type="Control" unique_id=1124354424]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aeton")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1177527712]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Perspectiva" type="TextureRect" parent="." unique_id=2103356201]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1922.0
+offset_bottom = 1082.0
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("2_6m4ak")
+
+[node name="Indara" type="TextureRect" parent="." unique_id=1187223307]
+layout_mode = 0
+offset_left = 170.0
+offset_top = -465.0
+offset_right = 810.0
+offset_bottom = -105.0
+
+[node name="Texto" type="Label" parent="." unique_id=1364003957]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "texto"
+horizontal_alignment = 1
+
+[node name="BotaoPular" type="Button" parent="." unique_id=2131134926]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -30.0
+offset_right = 81.5
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+text = "Clique para pular"
+flat = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1215274608]
+stream = ExtResource("2_7edad")

@@ -59,7 +59,7 @@ offset_right = 367.0
 offset_bottom = 272.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "CONFIGS"
+text = "AJUSTES"
 icon = ExtResource("3_xlw22")
 flat = true
 icon_alignment = 1
@@ -70,7 +70,7 @@ offset_left = 263.0
 offset_top = 269.0
 offset_right = 367.0
 offset_bottom = 309.0
-text = "CRÉDITOS"
+text = "PRODUÇÃO"
 icon = ExtResource("3_xlw22")
 flat = true
 icon_alignment = 1
@@ -88,6 +88,11 @@ text = "INDARA"
 texture_filter = 1
 layout_mode = 0
 texture = ExtResource("4_3gir8")
+
+[node name="FadeEntrada" type="ColorRect" parent="." unique_id=1942283580]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
 
 [connection signal="pressed" from="IniciarJogar" to="." method="_on_iniciar_jogar_pressed"]
 [connection signal="pressed" from="Arquivos" to="." method="_on_arquivos_pressed"]

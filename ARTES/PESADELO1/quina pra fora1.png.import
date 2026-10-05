@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gwh4v8l52ui0"
-path="res://.godot/imported/chao1.png-e0871980da2a7cfb496c668fee0e427a.ctex"
+uid="uid://byhb20yh8orfj"
+path="res://.godot/imported/quina pra fora1.png-8736f16f7464d58f17f6803d24fea7dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ARTES/chao1.png"
-dest_files=["res://.godot/imported/chao1.png-e0871980da2a7cfb496c668fee0e427a.ctex"]
+source_file="res://ARTES/PESADELO1/quina pra fora1.png"
+dest_files=["res://.godot/imported/quina pra fora1.png-8736f16f7464d58f17f6803d24fea7dd.ctex"]
 
 [params]
 

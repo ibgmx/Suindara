@@ -161,8 +161,8 @@ zoom = Vector2(2, 2)
 [node name="PointLight2D" type="PointLight2D" parent="EsferaEnergia" unique_id=1426881393]
 light_mask = 2
 material = SubResource("ShaderMaterial_2n3j7")
-color = Color(0.2206957, 3.8432405e-05, 0.22576243, 1)
-energy = 3.0
+color = Color(0.21960784, 0, 0.22745098, 0.5411765)
+energy = 2.0
 texture = ExtResource("4_kcvkc")
 
 [node name="TransicaoVitoria" type="CanvasLayer" parent="EsferaEnergia" unique_id=618216414]

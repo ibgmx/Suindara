@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Indara"
-run/main_scene="uid://dvg8mgfs3kpkt"
+run/main_scene="uid://ds8mso1nm5tr8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -45,6 +45,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Night Hunter"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/parallax2d_preview/plugin.cfg")
 
 [global]
 

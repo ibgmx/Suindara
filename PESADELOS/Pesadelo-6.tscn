@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://dgblmdr6kti3h"]
 
+[ext_resource type="PackedScene" uid="uid://dnu3wfjfuim42" path="res://CENAS/suindara.tscn" id="1_0jhvf"]
+
 [node name="Pesadelo6" type="Node2D" unique_id=936924167]
+
+[node name="Suindara" parent="." unique_id=1161717537 instance=ExtResource("1_0jhvf")]
+position = Vector2(1440, 3789)

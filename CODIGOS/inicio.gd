@@ -1,4 +1,3 @@
-
 extends Control
 
 @onready var botao_jogar: Button = $IniciarJogar
@@ -7,6 +6,7 @@ extends Control
 @onready var botao_arquivos: Button = $Arquivos
 
 @onready var seta_direita: TextureRect = $SetaDireita
+@onready var fade_entrada: ColorRect = $FadeEntrada
 
 var escalas_originais := {}
 
@@ -18,18 +18,81 @@ var escala_original_seta := Vector2.ONE
 
 
 func _ready() -> void:
+	# =====================================================
+	# FADE DE ENTRADA
+	# =====================================================
+
+	fade_entrada.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	fade_entrada.z_index = 100
+
+
+	# =====================================================
+	# SETA
+	# =====================================================
+
+	seta_direita.visible = false
+	seta_direita.modulate.a = 0.0
+
+
+	# =====================================================
+	# MÚSICA
+	# =====================================================
+
 	if not SomMenu.playing:
 		SomMenu.play()
+
+
+	# =====================================================
+	# BOTÕES
+	# =====================================================
 
 	registrar_botao(botao_jogar)
 	registrar_botao(botao_creditos)
 	registrar_botao(botao_configuracoes)
 	registrar_botao(botao_arquivos)
 
+
+	# =====================================================
+	# SETA
+	# =====================================================
+
 	escala_original_seta = seta_direita.scale
 	seta_direita.pivot_offset = seta_direita.size / 2.0
 
 	seta_direita.visible = false
+
+
+	# =====================================================
+	# FADE DA ABERTURA
+	# =====================================================
+
+	if get_tree().has_meta("fazer_fade_menu"):
+
+		fade_entrada.visible = true
+		fade_entrada.color = Color(1, 1, 1, 1)
+
+		get_tree().remove_meta("fazer_fade_menu")
+
+		await get_tree().process_frame
+
+		var fade := create_tween()
+
+		fade.set_trans(Tween.TRANS_SINE)
+		fade.set_ease(Tween.EASE_IN_OUT)
+
+		fade.tween_property(
+			fade_entrada,
+			"color:a",
+			0.0,
+			1.2
+		)
+
+		await fade.finished
+
+		fade_entrada.visible = false
+
+	else:
+		fade_entrada.visible = false
 
 
 func registrar_botao(botao: Button) -> void:
@@ -64,6 +127,7 @@ func _mouse_entrou(botao: Button) -> void:
 		0.12
 	)
 
+
 	# =====================================================
 	# POSIÇÃO DA SETA
 	# =====================================================
@@ -88,6 +152,7 @@ func _mouse_entrou(botao: Button) -> void:
 	)
 
 	seta_direita.global_position = posicao_seta
+
 
 	# =====================================================
 	# MINI HOVER DA SETA
@@ -130,6 +195,7 @@ func _mouse_saiu(botao: Button) -> void:
 	if botao_hover_atual == botao:
 		botao_hover_atual = null
 
+
 	# =====================================================
 	# VOLTA DA SETA
 	# =====================================================
@@ -148,6 +214,7 @@ func _mouse_saiu(botao: Button) -> void:
 		escala_original_seta,
 		0.12
 	)
+
 
 	# =====================================================
 	# CURSOR FORA DOS BOTÕES

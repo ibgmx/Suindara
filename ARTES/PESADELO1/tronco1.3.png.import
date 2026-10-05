@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oubvd5731qjh"
-path="res://.godot/imported/bloco dentro.png-b432cfde60d8e6f85486c6fa0144cb67.ctex"
+uid="uid://br2mb7q2o5uk5"
+path="res://.godot/imported/tronco1.3.png-7d1569250a4722379b2113c0b66f70a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ARTES/bloco dentro.png"
-dest_files=["res://.godot/imported/bloco dentro.png-b432cfde60d8e6f85486c6fa0144cb67.ctex"]
+source_file="res://ARTES/PESADELO1/tronco1.3.png"
+dest_files=["res://.godot/imported/tronco1.3.png-7d1569250a4722379b2113c0b66f70a1.ctex"]
 
 [params]
 

@@ -5,13 +5,57 @@ var cursor_dedo = preload("res://ARTES/cursor/cursor dedinho.png")
 var cursor_mira = preload("res://ARTES/cursor/cursor mira.png")
 
 var cursor_atual := ""
+var cursor_ativo := false
+var cena_anterior := ""
+
 
 func _ready():
+	cursor_normal = aumentar_cursor(cursor_normal, 2.5)
+	cursor_dedo = aumentar_cursor(cursor_dedo, 2.5)
+	cursor_mira = aumentar_cursor(cursor_mira, 2.5)
+
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	cursor_ativo = false
 	definir_cursor("normal")
 
 
+func aumentar_cursor(textura: Texture2D, escala: float) -> Texture2D:
+	var imagem := textura.get_image()
+
+	imagem.resize(
+		int(imagem.get_width() * escala),
+		int(imagem.get_height() * escala),
+		Image.INTERPOLATE_NEAREST
+	)
+
+	return ImageTexture.create_from_image(imagem)
+
+
 func _process(_delta):
-	atualizar_cursor()
+	var cena_atual = get_tree().current_scene
+
+	if cena_atual != null:
+		var nome_cena = cena_atual.name
+
+		if nome_cena != cena_anterior:
+			cena_anterior = nome_cena
+
+			if nome_cena == "Abertura":
+				cursor_ativo = false
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+				definir_cursor("normal")
+
+	if cursor_ativo:
+		atualizar_cursor()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		cursor_ativo = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		atualizar_cursor()
 
 
 func definir_cursor(tipo: String):
@@ -109,7 +153,7 @@ func atualizar_cursor():
 
 
 	# ==================================================
-	# indara
+	# INDARA
 	# ==================================================
 
 	var player = get_tree().get_first_node_in_group("player")
