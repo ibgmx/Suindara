@@ -17,6 +17,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Indara"
 run/main_scene="uid://ds8mso1nm5tr8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
+config/icon="uid://du0j8enmhx2hx"
 
 [audio]
 
