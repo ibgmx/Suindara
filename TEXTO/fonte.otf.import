@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://53heucpsrpg2"
-path="res://.godot/imported/fonte.otf-9a191eb262dcddfb1ab3e62b6f160050.fontdata"
+path="res://.godot/imported/fonte.otf-d217eeebbd4b974e70da701083147056.fontdata"
 
 [deps]
 
-source_file="res://fonte.otf"
-dest_files=["res://.godot/imported/fonte.otf-9a191eb262dcddfb1ab3e62b6f160050.fontdata"]
+source_file="res://TEXTO/fonte.otf"
+dest_files=["res://.godot/imported/fonte.otf-d217eeebbd4b974e70da701083147056.fontdata"]
 
 [params]
 

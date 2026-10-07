@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drmx7erhasy3y" path="res://CODIGOS/suindara.gd" id="1_rqxje"]
 [ext_resource type="Texture2D" uid="uid://ftjspa3kgsdh" path="res://ARTES/seta_desativada.png" id="2_mto67"]
+[ext_resource type="Script" uid="uid://ctkqrwxjogrqk" path="res://CODIGOS/luz_indara.gd" id="3_43a44"]
 [ext_resource type="PackedScene" uid="uid://bd5tdwv61opwm" path="res://CENAS/arco.tscn" id="3_i5oyl"]
 [ext_resource type="Texture2D" uid="uid://dqhbqayi68u1a" path="res://ARTES/seta_ativada.png" id="3_q87rk"]
 [ext_resource type="Texture2D" uid="uid://dioe1ry4df23r" path="res://ARTES/dash.png" id="4_mto67"]
@@ -109,8 +110,10 @@ voltas_derrota = 3.0
 [node name="LuzIndara" type="PointLight2D" parent="Indara" unique_id=607772942]
 light_mask = 5
 position = Vector2(1, 3)
+scale = Vector2(0.25, 0.25)
 shadow_enabled = true
 texture = ExtResource("5_txmom")
+script = ExtResource("3_43a44")
 
 [node name="pivo_seta_pulo" type="Node2D" parent="Indara" unique_id=1193195902]
 position = Vector2(0, -23)
