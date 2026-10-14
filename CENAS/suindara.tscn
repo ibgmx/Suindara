@@ -108,7 +108,7 @@ duracao_animacao_derrota = 3.0
 voltas_derrota = 3.0
 
 [node name="LuzIndara" type="PointLight2D" parent="Indara" unique_id=607772942]
-light_mask = 5
+light_mask = 2
 position = Vector2(1, 3)
 scale = Vector2(0.25, 0.25)
 shadow_enabled = true

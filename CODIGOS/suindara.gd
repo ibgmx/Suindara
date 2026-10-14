@@ -1639,16 +1639,21 @@ func abrir_pausa():
 
 	jogo_pausado = true
 
-	# Instancia a cena da pausa por cima da fase.
+	# Pausa somente a contagem das estatísticas.
+	if Estatisticas.has_method("pausar_tempo"):
+		Estatisticas.pausar_tempo()
+
+	# Abre o menu de pausa.
 	menu_pausa = cena_pausa.instantiate()
 	menu_pausa.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(menu_pausa)
 
-	# Congela absolutamente tudo da fase.
+	# O cronômetro da tela para automaticamente com a árvore.
 	get_tree().paused = true
 
 
 func fechar_pausa():
+	# Despausa o jogo primeiro.
 	get_tree().paused = false
 	jogo_pausado = false
 
@@ -1656,6 +1661,10 @@ func fechar_pausa():
 		menu_pausa.queue_free()
 
 	menu_pausa = null
+
+	# Retoma a contagem das estatísticas.
+	if Estatisticas.has_method("retomar_tempo"):
+		Estatisticas.retomar_tempo()
 
 
 func iniciar_derrota():

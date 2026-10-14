@@ -23,27 +23,33 @@ loop = true
 [node name="Tempo" type="Label" parent="." unique_id=69467745]
 texture_filter = 1
 layout_mode = 0
-offset_left = 119.0
+offset_left = 116.0
 offset_top = 96.0
-offset_right = 264.0
+offset_right = 524.0
 offset_bottom = 119.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "0"
+horizontal_alignment = 1
 
 [node name="NomeFase" type="Label" parent="." unique_id=25079305]
 layout_mode = 0
-offset_left = 120.0
+offset_left = 117.0
 offset_top = 128.0
-offset_right = 160.0
+offset_right = 525.0
 offset_bottom = 151.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "0"
+horizontal_alignment = 1
 
 [node name="Descricao" type="Label" parent="." unique_id=89931981]
 layout_mode = 0
-offset_left = 121.0
+offset_left = 118.0
 offset_top = 159.0
-offset_right = 161.0
+offset_right = 525.0
 offset_bottom = 182.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "0"
+horizontal_alignment = 1
 
 [node name="VoltarFases" type="Button" parent="." unique_id=1546998127 groups=["botoes"]]
 texture_filter = 1

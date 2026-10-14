@@ -2,23 +2,56 @@
 
 [ext_resource type="Texture2D" uid="uid://dd34ri01xbpmr" path="res://ARTES/PESADELO1/toco pequeno.png" id="1_1mfcn"]
 [ext_resource type="Texture2D" uid="uid://smag1fo4bhd7" path="res://ARTES/PESADELO1/toco.png" id="1_07lhq"]
+[ext_resource type="Texture2D" uid="uid://wh6bvhps1m3i" path="res://ARTES/PESADELO1/Estrelinha.png" id="1_7orjy"]
 [ext_resource type="Texture2D" uid="uid://c3v1f5i1hdu4f" path="res://ARTES/PESADELO1/toco medio.png" id="1_cy20l"]
+[ext_resource type="Texture2D" uid="uid://bhqrdeir2r4f1" path="res://ARTES/PESADELO1/Lua.png" id="1_rf8ek"]
 [ext_resource type="PackedScene" uid="uid://dnu3wfjfuim42" path="res://CENAS/suindara.tscn" id="1_xws0i"]
 [ext_resource type="Texture2D" uid="uid://cf0vgpius48pt" path="res://ARTES/PESADELO1/tronco1.png" id="2_07lhq"]
 [ext_resource type="Texture2D" uid="uid://mo73px7uyjb4" path="res://ARTES/PESADELO1/tronco medio1.png" id="2_j3jwk"]
+[ext_resource type="Texture2D" uid="uid://hb7qosm26wb7" path="res://ARTES/PESADELO1/Estrela.png" id="2_pl58h"]
 [ext_resource type="Texture2D" uid="uid://ccw5jlwpuelcl" path="res://ARTES/PESADELO1/tronco pequeno1.png" id="2_rf8ek"]
 [ext_resource type="Texture2D" uid="uid://diujwm8c8avko" path="res://ARTES/PESADELO1/tronco1.2.png" id="3_d0hxn"]
 [ext_resource type="Texture2D" uid="uid://bmvwfpev0p5tw" path="res://ARTES/PESADELO1/tronco medio1.2.png" id="3_j3jwk"]
 [ext_resource type="Texture2D" uid="uid://dmn22dfdd15ua" path="res://ARTES/PESADELO1/tronco pequeno2.png" id="3_pl58h"]
 [ext_resource type="Texture2D" uid="uid://br2mb7q2o5uk5" path="res://ARTES/PESADELO1/tronco1.3.png" id="4_cy20l"]
 [ext_resource type="Texture2D" uid="uid://gwh4v8l52ui0" path="res://ARTES/PESADELO1/chao1.png" id="5_d0hxn"]
-[ext_resource type="PackedScene" uid="uid://ffolfh07vv5l" path="res://CENAS/inimigo.tscn" id="5_lnuwn"]
+[ext_resource type="PackedScene" uid="uid://ffolfh07vv5l" path="res://INIMIGOS/PESADELO1/inimigo1.tscn" id="5_lnuwn"]
 [ext_resource type="Script" uid="uid://4ls0ecmmouvq" path="res://CODIGOS/cronometro.gd" id="5_vouf4"]
 [ext_resource type="Texture2D" uid="uid://oubvd5731qjh" path="res://ARTES/PESADELO1/bloco dentro.png" id="6_cy20l"]
 [ext_resource type="Texture2D" uid="uid://ljireu5ljkqn" path="res://ARTES/coração-dano.png" id="6_feprw"]
 [ext_resource type="Texture2D" uid="uid://byhb20yh8orfj" path="res://ARTES/PESADELO1/quina pra fora1.png" id="7_j3jwk"]
 [ext_resource type="Texture2D" uid="uid://b4s0thevqmixh" path="res://ARTES/PESADELO1/quina pra dentro1.png" id="8_ftdjc"]
 [ext_resource type="PackedScene" uid="uid://dsfub1p5plnbi" path="res://CENAS/esfera.tscn" id="8_xhy0g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08s5k"]
+texture = ExtResource("1_7orjy")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vk8pc"]
+sources/0 = SubResource("TileSetAtlasSource_08s5k")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_omv01"]
+texture = ExtResource("1_7orjy")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s4dco"]
+sources/0 = SubResource("TileSetAtlasSource_omv01")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjh42"]
+texture = ExtResource("2_pl58h")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yibmx"]
+sources/0 = SubResource("TileSetAtlasSource_mjh42")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp0o0"]
 texture = ExtResource("1_1mfcn")
@@ -296,10 +329,54 @@ animations = [{
 [node name="Pesadelo1" type="Node2D" unique_id=1244335135]
 metadata/_edit_horizontal_guides_ = [-152.0]
 
-[node name="AZUL" type="ColorRect" parent="." unique_id=1890258326]
+[node name="Escuro" type="CanvasModulate" parent="." unique_id=1877150832]
+z_index = -42
+position = Vector2(-1168, 856)
+color = Color(0.07123137, 0.07123139, 0.07123137, 1)
+
+[node name="CanvasLua" type="CanvasLayer" parent="." unique_id=1602354737]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="AZUL" type="ColorRect" parent="CanvasLua" unique_id=1890258326]
+z_index = -6
 offset_right = 2918.0
 offset_bottom = 3809.0
-color = Color(0.03662883, 0.027850702, 0.14130652, 1)
+color = Color(0.0032578483, 0.0013515634, 0.037275493, 1)
+
+[node name="Estrelinhazinhas" type="Parallax2D" parent="CanvasLua" unique_id=402503120]
+scroll_scale = Vector2(0.001, 0.001)
+
+[node name="Estrelinhazinhas" type="TileMapLayer" parent="CanvasLua/Estrelinhazinhas" unique_id=894487294]
+scale = Vector2(0.01, 0.01)
+tile_map_data = PackedByteArray("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AADeBP4GAAABAAAAAADeBP8GAAABAAEAAADNBxYFAAAAAAAAAADNBxcFAAAAAAEAAADOBxYFAAABAAAAAADOBxcFAAABAAEAAAAUDGMFAAAAAAAAAAAUDGQFAAAAAAEAAAAVDGMFAAABAAAAAAAVDGQFAAABAAEAAABDCg4FAAAAAAAAAABDCg8FAAAAAAEAAABECg4FAAABAAAAAABECg8FAAABAAEAAAAOC8wDAAAAAAAAAAAOC80DAAAAAAEAAAAPC8wDAAABAAAAAAAPC80DAAABAAEAAACnCyMFAAAAAAAAAACnCyQFAAAAAAEAAACoCyMFAAABAAAAAACoCyQFAAABAAEAAACpCJIEAAAAAAAAAACpCJMEAAAAAAEAAACqCJIEAAABAAAAAACqCJMEAAABAAEAAABeCWMEAAAAAAAAAABeCWQEAAAAAAEAAABfCWMEAAABAAAAAABfCWQEAAABAAEAAAA+CRkFAAAAAAAAAAA+CRoFAAAAAAEAAAA/CRkFAAABAAAAAAA/CRoFAAABAAEAAAAbC10FAAAAAAAAAAAbC14FAAAAAAEAAAAcC10FAAABAAAAAAAcC14FAAABAAEAAAA=")
+tile_set = SubResource("TileSet_vk8pc")
+
+[node name="Estrelinhas" type="Parallax2D" parent="CanvasLua" unique_id=1140001596]
+scroll_scale = Vector2(0.01, 0.01)
+
+[node name="Estrelinhas" type="TileMapLayer" parent="CanvasLua/Estrelinhas" unique_id=221879357]
+scale = Vector2(0.05, 0.05)
+tile_map_data = PackedByteArray("AAA0Ae4AAAAAAAAAAAA0Ae8AAAAAAAEAAAA1Ae4AAAABAAAAAAA1Ae8AAAABAAEAAACCARgBAAAAAAAAAACCARkBAAAAAAEAAACDARgBAAABAAAAAACDARkBAAABAAEAAADJACABAAAAAAAAAADJACEBAAAAAAEAAADKACABAAABAAAAAADKACEBAAABAAEAAAB1AW0BAAAAAAAAAAB1AW4BAAAAAAEAAAB2AW0BAAABAAAAAAB2AW4BAAABAAEAAADIATsBAAAAAAAAAADIATwBAAAAAAEAAADJATsBAAABAAAAAADJATwBAAABAAEAAAA6Av8AAAAAAAAAAAA6AgABAAAAAAEAAAA7Av8AAAABAAAAAAA7AgABAAABAAEAAADYAVYBAAAAAAAAAADYAVcBAAAAAAEAAADZAVYBAAABAAAAAADZAVcBAAABAAEAAAASAi4BAAAAAAAAAAASAi8BAAAAAAEAAAATAi4BAAABAAAAAAATAi8BAAABAAEAAADbAeEAAAAAAAAAAADbAeIAAAAAAAEAAADcAeEAAAABAAAAAADcAeIAAAABAAEAAAAwAsAAAAAAAAAAAAAwAsEAAAAAAAEAAAAxAsAAAAABAAAAAAAxAsEAAAABAAEAAAAHAaYAAAAAAAAAAAAHAacAAAAAAAEAAAAIAaYAAAABAAAAAAAIAacAAAABAAEAAAD5AB4BAAAAAAAAAAD5AB8BAAAAAAEAAAD6AB4BAAABAAAAAAD6AB8BAAABAAEAAAA=")
+tile_set = SubResource("TileSet_s4dco")
+
+[node name="Estrelas" type="Parallax2D" parent="CanvasLua" unique_id=419201052]
+scroll_scale = Vector2(0.015, 0.015)
+
+[node name="Estrela" type="TileMapLayer" parent="CanvasLua/Estrelas" unique_id=87347577]
+scale = Vector2(0.3, 0.3)
+tile_map_data = PackedByteArray("AABTAJYAAAAAAAAAAABTAJcAAAAAAAEAAABUAJYAAAABAAAAAABUAJcAAAABAAEAAAB1AIQAAAAAAAAAAAB1AIUAAAAAAAEAAAB2AIQAAAABAAAAAAB2AIUAAAABAAEAAABtAJIAAAAAAAAAAABtAJMAAAAAAAEAAABuAJIAAAABAAAAAABuAJMAAAABAAEAAABHAIMAAAAAAAAAAABHAIQAAAAAAAEAAABIAIMAAAABAAAAAABIAIQAAAABAAEAAAA1ADYAAAAAAAAAAAA1ADcAAAAAAAEAAAA2ADYAAAABAAAAAAA2ADcAAAABAAEAAABCADoAAAAAAAAAAABCADsAAAAAAAEAAABDADoAAAABAAAAAABDADsAAAABAAEAAAA1AB8AAAAAAAAAAAA1ACAAAAAAAAEAAAA2AB8AAAABAAAAAAA2ACAAAAABAAEAAABNADEAAAAAAAAAAABNADIAAAAAAAEAAABOADEAAAABAAAAAABOADIAAAABAAEAAAAdACIAAAAAAAAAAAAdACMAAAAAAAEAAAAeACIAAAABAAAAAAAeACMAAAABAAEAAAB3ACUAAAAAAAAAAAB3ACYAAAAAAAEAAAB4ACUAAAABAAAAAAB4ACYAAAABAAEAAABiAD0AAAAAAAAAAABiAD4AAAAAAAEAAABjAD0AAAABAAAAAABjAD4AAAABAAEAAABOABMAAAAAAAAAAABOABQAAAAAAAEAAABPABMAAAABAAAAAABPABQAAAABAAEAAAAQABIAAAAAAAAAAAAQABMAAAAAAAEAAAARABIAAAABAAAAAAARABMAAAABAAEAAAA3ABUAAAAAAAAAAAA3ABYAAAAAAAEAAAA4ABUAAAABAAAAAAA4ABYAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_yibmx")
+
+[node name="Lua" type="Parallax2D" parent="CanvasLua" unique_id=353874605]
+scroll_scale = Vector2(0.018, 0.018)
+scroll_offset = Vector2(-117, -358)
+
+[node name="Lua" type="Sprite2D" parent="CanvasLua/Lua" unique_id=1912359586]
+z_index = 2
+position = Vector2(453.2854, 548.32263)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_rf8ek")
 
 [node name="Cenário" type="HBoxContainer" parent="." unique_id=1347748251]
 offset_right = 40.0
@@ -447,12 +524,11 @@ position = Vector2(1939, 1223)
 [node name="Inimigo22" parent="Inimies" unique_id=550290591 instance=ExtResource("5_lnuwn")]
 position = Vector2(2769, 2800)
 
-[node name="Escuro" type="CanvasModulate" parent="." unique_id=1877150832]
-position = Vector2(-1168, 856)
-color = Color(0.07123137, 0.07123139, 0.07123137, 1)
-
 [node name="Suindara" parent="." unique_id=1161717537 groups=["player"] instance=ExtResource("1_xws0i")]
 position = Vector2(1444, 3760)
+
+[node name="Esfera" parent="." unique_id=989973632 instance=ExtResource("8_xhy0g")]
+position = Vector2(1438, 89)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1782235082]
 
@@ -466,6 +542,8 @@ offset_left = 0.19999886
 offset_top = 0.07999945
 offset_right = -0.12000275
 offset_bottom = 0.03999901
+theme_override_colors/font_color = Color(0.9137255, 0.8862745, 0.8352941, 1)
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 script = ExtResource("5_vouf4")
 
 [node name="Vidas" type="HBoxContainer" parent="HUD" unique_id=2052423881]
@@ -493,6 +571,3 @@ position = Vector2(11, 17)
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_iupvx")
 animation = &"cheio"
-
-[node name="Esfera" parent="." unique_id=989973632 instance=ExtResource("8_xhy0g")]
-position = Vector2(1438, 89)

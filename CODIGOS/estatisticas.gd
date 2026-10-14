@@ -23,17 +23,21 @@ var tempo_contando := false
 var momento_inicio := 0
 var tempo_finalizado := 0.0
 
+# Tempo acumulado antes da contagem atual.
+var tempo_acumulado := 0.0
+
+# Controle da pausa.
+var tempo_pausado := false
+var momento_inicio_pausa := 0
+
 
 # =========================================================
 # INICIAR NOVA TENTATIVA
 # =========================================================
 
 func iniciar_tentativa() -> void:
-	# A tentativa anterior terminou.
-	# Começa uma nova sem apagar o número de tentativas.
 	tentativas += 1
 
-	# Estatísticas da nova tentativa começam do zero.
 	tempo_gasto = 0.0
 	dashs = 0
 	flechas = 0
@@ -42,6 +46,10 @@ func iniciar_tentativa() -> void:
 	tempo_contando = false
 	momento_inicio = 0
 	tempo_finalizado = 0.0
+	tempo_acumulado = 0.0
+
+	tempo_pausado = false
+	momento_inicio_pausa = 0
 
 
 # =========================================================
@@ -49,9 +57,43 @@ func iniciar_tentativa() -> void:
 # =========================================================
 
 func iniciar_tempo() -> void:
+	tempo_acumulado = 0.0
+	tempo_gasto = 0.0
+	tempo_finalizado = 0.0
+
 	momento_inicio = Time.get_ticks_msec()
 	tempo_contando = true
-	tempo_finalizado = 0.0
+
+	tempo_pausado = false
+	momento_inicio_pausa = 0
+
+
+# =========================================================
+# PAUSAR CONTAGEM DAS ESTATÍSTICAS
+# =========================================================
+
+func pausar_tempo() -> void:
+	if not tempo_contando or tempo_pausado:
+		return
+
+	var agora := Time.get_ticks_msec()
+
+	tempo_acumulado += float(agora - momento_inicio) / 1000.0
+	tempo_pausado = true
+	momento_inicio_pausa = agora
+
+
+# =========================================================
+# RETOMAR CONTAGEM DAS ESTATÍSTICAS
+# =========================================================
+
+func retomar_tempo() -> void:
+	if not tempo_contando or not tempo_pausado:
+		return
+
+	momento_inicio = Time.get_ticks_msec()
+	tempo_pausado = false
+	momento_inicio_pausa = 0
 
 
 # =========================================================
@@ -62,12 +104,14 @@ func finalizar_tentativa() -> void:
 	if not tempo_contando:
 		return
 
-	var agora := Time.get_ticks_msec()
+	if not tempo_pausado:
+		var agora := Time.get_ticks_msec()
+		tempo_acumulado += float(agora - momento_inicio) / 1000.0
 
-	tempo_gasto = float(agora - momento_inicio) / 1000.0
+	tempo_gasto = tempo_acumulado
 	tempo_finalizado = tempo_gasto
-
 	tempo_contando = false
+	tempo_pausado = false
 
 
 # =========================================================
@@ -117,11 +161,16 @@ func finalizar_derrota() -> void:
 # =========================================================
 
 func obter_tempo_gasto() -> float:
-	if tempo_contando:
-		var agora := Time.get_ticks_msec()
-		return float(agora - momento_inicio) / 1000.0
+	if not tempo_contando:
+		return tempo_gasto
 
-	return tempo_gasto
+	if tempo_pausado:
+		return tempo_acumulado
+
+	var agora := Time.get_ticks_msec()
+	var tempo_atual := float(agora - momento_inicio) / 1000.0
+
+	return tempo_acumulado + tempo_atual
 
 
 # =========================================================

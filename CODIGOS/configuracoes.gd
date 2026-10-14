@@ -1,7 +1,7 @@
 extends Control
 
-@onready var botao_a: Button = $BotaoA
-@onready var botao_s: Button = $BotaoS
+@onready var botao_a: Button = $Agarrar
+@onready var botao_s: Button = $Segurar
 
 @onready var tecla_a: Label = $TeclaA
 @onready var tecla_s: Label = $TeclaS

@@ -2,7 +2,20 @@
 
 [ext_resource type="Script" uid="uid://3s41s60e3qkt" path="res://BOTOES/voltar.gd" id="1_5xvoa"]
 [ext_resource type="Texture2D" uid="uid://cl0ujo8lgf6my" path="res://ARTES/sair.png" id="1_xurme"]
+[ext_resource type="Shader" uid="uid://ddceemmi0ppfa" path="res://SHADERS/texto.gdshader" id="3_ek32i"]
 [ext_resource type="Script" uid="uid://cxghfri3srjhc" path="res://CODIGOS/saiba_mais.gd" id="3_kospo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7345h"]
+shader = ExtResource("3_ek32i")
+shader_parameter/velocidade = 0.7
+shader_parameter/largura = 0.18
+shader_parameter/intensidade = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ek32i"]
+shader = ExtResource("3_ek32i")
+shader_parameter/velocidade = 0.7
+shader_parameter/largura = 0.18
+shader_parameter/intensidade = 0.8
 
 [node name="Creditos" type="Control" unique_id=790404233]
 layout_mode = 3
@@ -17,7 +30,7 @@ offset_bottom = 360.0
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-color = Color(0.13491163, 0.008295311, 0.20096722, 1)
+color = Color(0.12941177, 0.11372549, 0.105882354, 1)
 
 [node name="Voltar" type="Button" parent="." unique_id=1390669321]
 texture_filter = 1
@@ -31,6 +44,8 @@ flat = true
 script = ExtResource("1_5xvoa")
 
 [node name="Texto" type="Label" parent="." unique_id=724323025]
+modulate = Color(0.9612704, 0.77450466, 1, 1)
+material = SubResource("ShaderMaterial_7345h")
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -46,6 +61,7 @@ text = "CRIADO POR:
 Bryan Machado
 
 Artistas Convidados:
+Eloah Tenório
 
 Agradecimentos: 
 Braian Moura"
@@ -53,6 +69,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Saiba mais" type="RichTextLabel" parent="." unique_id=1779174838]
+modulate = Color(0.26707187, 1, 0.99879247, 1)
+material = SubResource("ShaderMaterial_ek32i")
 layout_mode = 0
 offset_left = 272.0
 offset_top = 329.0
@@ -60,6 +78,7 @@ offset_right = 364.0
 offset_bottom = 369.0
 bbcode_enabled = true
 text = "[url=https://bryan-machado.netlify.app/] Saiba mais [/url]"
+meta_underlined = false
 script = ExtResource("3_kospo")
 
 [connection signal="pressed" from="Voltar" to="Voltar" method="_on_pressed"]

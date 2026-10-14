@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4iahxsyatyjl" path="res://ARTES/pedestal.png" id="1_lpjw4"]
 [ext_resource type="Texture2D" uid="uid://bevc06k0d4t23" path="res://ARTES/esfera.png" id="2_lpjw4"]
 [ext_resource type="Texture2D" uid="uid://siulljpbn3jj" path="res://ARTES/luz.png" id="4_kcvkc"]
+[ext_resource type="Script" uid="uid://ctkqrwxjogrqk" path="res://CODIGOS/luz_indara.gd" id="5_2n3j7"]
 [ext_resource type="Shader" uid="uid://blf2p4me3ehtl" path="res://SHADERS/explosao.gdshader" id="5_mdt8a"]
 [ext_resource type="AudioStream" uid="uid://cgywm270sp50a" path="res://SONS/explosao_esfera.mp3" id="6_r7woc"]
 
@@ -119,10 +120,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdt8a"]
 radius = 16.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n3j7"]
-shader = ExtResource("5_mdt8a")
-shader_parameter/progresso = 0.9550000453625
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ji4vr"]
 shader = ExtResource("5_mdt8a")
 shader_parameter/progresso = 0.130000006175
@@ -160,10 +157,11 @@ zoom = Vector2(2, 2)
 
 [node name="PointLight2D" type="PointLight2D" parent="EsferaEnergia" unique_id=1426881393]
 light_mask = 2
-material = SubResource("ShaderMaterial_2n3j7")
+scale = Vector2(0.2, 0.2)
 color = Color(0.21960784, 0, 0.22745098, 0.5411765)
 energy = 2.0
 texture = ExtResource("4_kcvkc")
+script = ExtResource("5_2n3j7")
 
 [node name="TransicaoVitoria" type="CanvasLayer" parent="EsferaEnergia" unique_id=618216414]
 

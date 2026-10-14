@@ -1,3 +1,4 @@
+
 extends Node
 
 var cursor_normal = preload("res://ARTES/cursor/cursor.png")
@@ -75,14 +76,45 @@ func definir_cursor(tipo: String):
 			Input.set_custom_mouse_cursor(cursor_mira)
 
 
+# ==================================================
+# ENCONTRAR A INDARA
+# ==================================================
+
+func encontrar_indara() -> Node:
+
+	var cena = get_tree().current_scene
+
+	if cena != null:
+		var indara = cena.get_node_or_null("Suindara/Indara")
+
+		if indara != null:
+			return indara
+
+	return get_tree().get_first_node_in_group("player")
+
+
+# ==================================================
+# ATUALIZAR CURSOR
+# ==================================================
+
 func atualizar_cursor():
 
-	var viewport = get_viewport()
+	var player = encontrar_indara()
+
+	# ==================================================
+	# INDARA MORREU: SOMENTE CURSOR PADRÃO
+	# ==================================================
+
+	if player != null and player.get("derrota_iniciada") == true:
+		definir_cursor("normal")
+		return
+
 
 	# ==================================================
 	# BOTÕES DA INTERFACE
 	# ==================================================
 
+	var viewport = get_viewport()
 	var controle = viewport.gui_get_hovered_control()
 
 	if controle != null:
@@ -112,7 +144,7 @@ func atualizar_cursor():
 
 
 	# ==================================================
-	# INIMIGO
+	# INIMIGOS
 	# ==================================================
 
 	var cena_atual = get_tree().current_scene
@@ -122,7 +154,6 @@ func atualizar_cursor():
 		return
 
 	var espaco = cena_atual.get_world_2d().direct_space_state
-
 	var query_inimigo = PhysicsPointQueryParameters2D.new()
 
 	query_inimigo.position = mouse_global
@@ -153,10 +184,8 @@ func atualizar_cursor():
 
 
 	# ==================================================
-	# INDARA
+	# INDARA NÃO ENCONTRADA
 	# ==================================================
-
-	var player = get_tree().get_first_node_in_group("player")
 
 	if player == null:
 		definir_cursor("normal")
@@ -164,7 +193,7 @@ func atualizar_cursor():
 
 
 	# ==================================================
-	# SETAS
+	# SETAS DE PULO
 	# ==================================================
 
 	var seta_disponivel = player.get_node_or_null(
@@ -202,6 +231,10 @@ func atualizar_cursor():
 
 	definir_cursor("normal")
 
+
+# ==================================================
+# BUSCA RECURSIVA DE NÓS
+# ==================================================
 
 func encontrar_no_por_nome(no: Node, nome: String) -> Node:
 

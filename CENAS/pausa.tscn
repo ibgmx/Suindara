@@ -19,14 +19,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="titulo" type="Label" parent="." unique_id=2090831396]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -26.0
-offset_top = 10.0
-offset_right = 26.0
-offset_bottom = 33.0
+offset_left = -42.0
+offset_top = 6.0
+offset_right = 43.0
+offset_bottom = 43.0
 grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
+theme_override_font_sizes/font_size = 26
 text = "PAUSA"
 
 [node name="Reiniciar" type="Button" parent="." unique_id=1413533822 groups=["botoes"]]

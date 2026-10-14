@@ -14,9 +14,10 @@ script = ExtResource("1_wv1ly")
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-color = Color(0.13491163, 0.008295311, 0.20096722, 1)
+color = Color(0.12941177, 0.11372549, 0.105882354, 1)
 
 [node name="TeclaS" type="Label" parent="." unique_id=1159725279]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 173.0
 offset_top = 175.0
@@ -25,6 +26,7 @@ offset_bottom = 190.0
 text = "S"
 
 [node name="TeclaA" type="Label" parent="." unique_id=1374188539]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 170.0
 offset_top = 125.0
@@ -32,15 +34,18 @@ offset_right = 179.0
 offset_bottom = 140.0
 text = "A"
 
-[node name="titulo" type="Label" parent="." unique_id=891462873]
+[node name="Título" type="Label" parent="." unique_id=891462873]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
-offset_left = 249.0
-offset_top = 12.0
-offset_right = 383.0
-offset_bottom = 35.0
+offset_left = 198.0
+offset_top = 11.0
+offset_right = 427.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
+theme_override_font_sizes/font_size = 28
 text = "CONFIGURAÇOES"
 
-[node name="BotaoA" type="Button" parent="." unique_id=495407545]
+[node name="Agarrar" type="Button" parent="." unique_id=495407545]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 114.0
@@ -51,13 +56,14 @@ icon = ExtResource("2_4ryny")
 flat = true
 icon_alignment = 1
 
-[node name="BotaoS" type="Button" parent="." unique_id=1418696054]
+[node name="Segurar" type="Button" parent="." unique_id=1418696054]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 47.0
 offset_top = 162.0
 offset_right = 177.0
 offset_bottom = 202.0
-text = "PARAR AR"
+text = "SEGURAR"
 icon = ExtResource("2_4ryny")
 flat = true
 icon_alignment = 1
@@ -74,38 +80,47 @@ flat = true
 script = ExtResource("1_jxx3u")
 
 [node name="Esc" type="Label" parent="." unique_id=762762775]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 66.0
 offset_top = 224.0
 offset_right = 168.0
 offset_bottom = 239.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "PAUSAR - ESC"
 
-[node name="Esc2" type="Label" parent="." unique_id=360176729]
+[node name="Minimizar" type="Label" parent="." unique_id=360176729]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 67.0
 offset_top = 259.0
 offset_right = 169.0
 offset_bottom = 274.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "MINIMIZAR - F4"
 
-[node name="musica" type="Label" parent="." unique_id=796280861]
+[node name="Música" type="Label" parent="." unique_id=796280861]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 401.0
 offset_top = 181.0
 offset_right = 503.0
 offset_bottom = 203.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "MUSICAS"
 
-[node name="efeitos sonoros" type="Label" parent="." unique_id=1141142481]
+[node name="Efeitos sonoros" type="Label" parent="." unique_id=1141142481]
+modulate = Color(0.9137255, 0.8862745, 0.8352941, 1)
 layout_mode = 0
 offset_left = 401.0
 offset_top = 114.0
 offset_right = 547.0
 offset_bottom = 136.0
+theme_override_colors/font_shadow_color = Color(0.31764707, 0.2509804, 0.22352941, 1)
 text = "EFEITOS SONOROS"
 
 [node name="Efeitos" type="HSlider" parent="." unique_id=352273636]
+modulate = Color(0.65882355, 0.4745098, 0.3137255, 1)
 layout_mode = 0
 offset_left = 401.0
 offset_top = 101.0
@@ -113,6 +128,7 @@ offset_right = 518.0
 offset_bottom = 202.0
 
 [node name="Musicas" type="HSlider" parent="." unique_id=1387890273]
+modulate = Color(0.65882355, 0.4745098, 0.3137255, 1)
 layout_mode = 0
 offset_left = 401.0
 offset_top = 187.0

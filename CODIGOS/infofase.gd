@@ -17,8 +17,8 @@ func _ready() -> void:
 
 	if fase == 1:
 		nome_fase.text = "FASE 1"
-		descricao.text = "Não se esqueça daquilo que é importante para você."
-		tempo.text = "TEMPO: 03:00"
+		descricao.text = "Se você os viu, eles também viram você."
+		tempo.text = "TEMPO: 03:30"
 
 	elif fase == 2:
 		nome_fase.text = "FASE 2"

@@ -14,7 +14,7 @@ func _ready():
 		nome.text = "???"
 		idade.text = "???"
 		funcao.text = "???"
-		descricao.text = "ARQUIVO BLOQUEADO"
+		descricao.text = "ARQUIVO EM BRANCO"
 
 		return
 
@@ -22,9 +22,9 @@ func _ready():
 	match id:
 
 		1:
-			nome.text = "Cleiton"
-			idade.text = "42"
-			funcao.text = "Médico"
+			nome.text = "Luna"
+			idade.text = "12 anos"
+			funcao.text = "Ela é apenas uma criança."
 			descricao.text = "Descrição do arquivo 1"
 
 		2:

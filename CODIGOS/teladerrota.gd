@@ -9,6 +9,8 @@ extends Control
 var escalas_originais := {}
 
 
+
+
 func _ready() -> void:
 	# Prepara as estatísticas
 	tempo.text = "TEMPO: " + Estatisticas.obter_tempo_formatado()

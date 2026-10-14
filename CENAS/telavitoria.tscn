@@ -114,7 +114,7 @@ icon_alignment = 1
 [node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=867882759]
 stream = ExtResource("3_i1fcg")
 autoplay = true
-bus = &"Musica"
+bus = &"Efeitos"
 parameters/looping = true
 
 [node name="Vitoria" type="Label" parent="." unique_id=797390094]

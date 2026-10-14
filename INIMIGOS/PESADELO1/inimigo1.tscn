@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://ffolfh07vv5l"]
+
+[ext_resource type="Script" uid="uid://dm1osiq1y4lwn" path="res://CODIGOS/inimigo.gd" id="1_045kk"]
+[ext_resource type="Texture2D" uid="uid://gj8nit7kulei" path="res://INIMIGOS/PESADELO1/Observador.png" id="2_dl2t0"]
+[ext_resource type="AudioStream" uid="uid://gowtmngp5pdm" path="res://INIMIGOS/PESADELO1/SomAtaque.wav" id="3_8ak8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ak8y"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(0, 0, 185, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fppp0"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(185, 0, 185, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osspy"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(370, 0, 185, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb3q0"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(555, 0, 185, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r7hw"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(740, 0, 185, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fep3k"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(925, 0, 185, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr012"]
+atlas = ExtResource("2_dl2t0")
+region = Rect2(1110, 0, 185, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aq51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ak8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fppp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osspy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb3q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r7hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fep3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr012")
+}],
+"loop": 1,
+"name": &"Padrão",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vavwf"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dcx3"]
+radius = 2.0125785
+
+[node name="Inimigo" type="CharacterBody2D" unique_id=1503669897]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_045kk")
+
+[node name="Observador" type="AnimatedSprite2D" parent="." unique_id=775726086]
+texture_filter = 1
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_5aq51")
+animation = &"Padrão"
+frame_progress = 0.10362953
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=531808720]
+shape = SubResource("CircleShape2D_vavwf")
+
+[node name="AreaDano" type="Area2D" parent="." unique_id=146800939]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=1315254649]
+position = Vector2(-7.1525574e-07, 7.1525574e-07)
+scale = Vector2(7.95, 7.95)
+shape = SubResource("CircleShape2D_8dcx3")
+
+[node name="SomAtaque" type="AudioStreamPlayer" parent="." unique_id=229729173]
+stream = ExtResource("3_8ak8y")
+bus = &"Efeitos"
